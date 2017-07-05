@@ -68,6 +68,7 @@
   /var/lib/lxd/unix.socket rw,
 {% endif %}
   /var/log/nova/nova-compute.log w,
+  /var/log/nova/privsep-helper.log w,
   /var/run/libvirt/* rw,
   /var/run/libvirt/libvirt-sock rw,
   /var/tmp/* w,
