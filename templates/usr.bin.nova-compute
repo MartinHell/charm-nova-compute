@@ -41,7 +41,7 @@
   /etc/sudoers.d/ r,
   /etc/sudoers.d/* r,
   /proc/*/cmdline r,
-  /proc/sys/net/ipv6/conf/** wc,
+  /proc/sys/net/ipv6/conf/** w,
   /proc/*/task/*/comm wr,
   /proc/*/fd/ r,
   /proc/*/net/ip_tables_names r,
@@ -63,7 +63,7 @@
   /sys/devices/system/node/ r,
   /sys/devices/system/node/** r,
   /sys/devices/virtual/block/nbd*/ r,
-  /sys/devices/virtual/net/** wc,
+  /sys/devices/virtual/net/** w,
   /tmp/* rw,
   /tmp/*/ rw,
   /tmp/** rw,
@@ -74,7 +74,7 @@
   /usr/lib{,32,64}/python{2,3}.[34567]/**.{pyc,so} mrw,
   /var/lib/nova/** rwk,
 {% if virt_type == 'lxd' %}
-  /var/lib/lxd/unix.socket rw,
+  /va/lib/lxd/unix.socket rw,
 {% endif %}
   /var/log/nova/nova-compute.log w,
   /var/log/nova/privsep-helper.log w,
