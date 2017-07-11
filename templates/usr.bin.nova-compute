@@ -80,7 +80,7 @@
   /usr/lib{,32,64}/python{2,3}.[34567]/**.{pyc,so} mrw,
   /var/lib/nova/** rwk,
 {% if virt_type == 'lxd' %}
-  /va/lib/lxd/unix.socket rw,
+  /var/lib/lxd/unix.socket rw,
 {% endif %}
   /var/log/nova/nova-compute.log w,
   /var/log/nova/privsep-helper.log w,
