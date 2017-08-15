@@ -60,7 +60,7 @@
   /sbin/ldconfig rix,
   /sbin/ldconfig.real rix,
   /sbin/mkfs rix,
-  /sbin/mkfs.fat rix
+  /sbin/mkfs.fat rix,
   /sbin/hdparm rix,
   /sbin/xtables-multi rix,
   /sys/block/ r,
