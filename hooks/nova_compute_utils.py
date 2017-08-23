@@ -245,7 +245,7 @@ BASE_RESOURCE_MAP = {
         'contexts': [NovaNetworkAppArmorContext()],
     },
     NOVA_LOGGER_CONF: {
-        'services': [nova-compute],
+        'services': ['nova-compute'],
         'contexts': [NovaComputeLoggingContext()],
     },
 }
