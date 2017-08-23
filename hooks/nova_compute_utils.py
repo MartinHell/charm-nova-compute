@@ -114,6 +114,7 @@ from nova_compute_context import (
     NovaNetworkAppArmorContext,
     SerialConsoleContext,
     NovaComputeAvailabilityZoneContext,
+    NovaComputeLoggingContext,
 )
 
 CA_CERT_PATH = '/usr/local/share/ca-certificates/keystone_juju_ca_cert.crt'
@@ -194,6 +195,7 @@ LIBVIRTD_CONF = '/etc/libvirt/libvirtd.conf'
 LIBVIRT_BIN = '/etc/default/libvirt-bin'
 LIBVIRT_BIN_OVERRIDES = '/etc/init/libvirt-bin.override'
 NOVA_CONF = '%s/nova.conf' % NOVA_CONF_DIR
+NOVA_LOGGER_CONF = '%s/logging.conf' % NOVA_CONF_DIR
 QEMU_KVM = '/etc/default/qemu-kvm'
 NOVA_API_AA_PROFILE_PATH = ('/etc/apparmor.d/{}'.format(NOVA_API_AA_PROFILE))
 NOVA_COMPUTE_AA_PROFILE_PATH = ('/etc/apparmor.d/{}'
@@ -246,6 +248,10 @@ BASE_RESOURCE_MAP = {
     NOVA_NETWORK_AA_PROFILE_PATH: {
         'services': ['nova-network'],
         'contexts': [NovaNetworkAppArmorContext()],
+    },
+    NOVA_LOGGER_CONF: {
+        'services': [nova-compute],
+        'contexts': [NovaComputeLoggingContext()],
     },
 }
 

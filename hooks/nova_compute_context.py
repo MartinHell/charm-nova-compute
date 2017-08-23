@@ -691,3 +691,21 @@ class NovaComputeAvailabilityZoneContext(context.OSContextGenerator):
             ctxt['default_availability_zone'] = config(
                 'default-availability-zone')
         return ctxt
+
+class NovaComputeLoggingContext(context.OSContextGenerator):
+
+    def __call__(self):
+        ctxt = {}
+        debug = config('debug')
+        if debug:
+            ctxt['root_level'] = 'DEBUG'
+        log_level = config('log-level')
+        log_level_accepted_params = ['WARNING', 'INFO', 'DEBUG', 'ERROR']
+        if log_level in log_level_accepted_params:
+            ctxt['log_level'] = config('log-level')
+        else:
+            log("log-level must be one of the following states "
+                "(WARNING, INFO, DEBUG, ERROR) keeping the current state.")
+            ctxt['log_level'] = None
+
+        return ctxt
