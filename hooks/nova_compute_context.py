@@ -678,6 +678,7 @@ class NovaComputeLoggingContext(context.OSContextGenerator):
 
     def __call__(self):
         ctxt = {}
+        ctxt['json_logs'] = config('json-logs')
         debug = config('debug')
         if debug:
             ctxt['root_level'] = 'DEBUG'
