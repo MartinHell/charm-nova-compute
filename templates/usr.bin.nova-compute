@@ -44,6 +44,7 @@
   /etc/sudoers.d/ r,
   /etc/sudoers.d/* r,
   /proc/*/cmdline r,
+  /proc/loadavg r,
   /proc/sys/net/ipv6/conf/** w,
   /proc/*/task/*/comm wr,
   /proc/*/fd/ r,
