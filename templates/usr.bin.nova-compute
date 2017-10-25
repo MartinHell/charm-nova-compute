@@ -82,7 +82,9 @@
 {% if virt_type == 'lxd' %}
   /var/lib/lxd/unix.socket rw,
 {% endif %}
+  /var/lib/charm/nova-compute-kvm/ceph.conf r,
   /var/log/nova/nova-compute.log w,
+  /var/log/nova/nova.log w,
   /var/log/nova/privsep-helper.log w,
   /var/run/libvirt/* rw,
   /var/run/libvirt/libvirt-sock rw,
